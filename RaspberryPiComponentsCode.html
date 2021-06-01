@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+	<style type="text/css">
+		#heading
+		{
+			background: linear-gradient(to right, #f32170, #ff6b08,#cf23cf, #eedd44);
+            -webkit-text-fill-color: transparent;
+        	-webkit-background-clip: text;
+		}
+		#about
+		{
+			background: black;
+			color: white;
+		}
+		body
+		{
+				background: linear-gradient(to bottom, #ffffff 0%, #ffcccc 100%);
+		}
+	</style>
+</head>
+<font size="+1">
+<body>
+	<marquee>
+	<p>😊Sameer Shekhar Mishra&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;💌sameermishra035@gmail.com
+	</p>
+	</marquee>
+
+	<hr size="5px" noshade>
+	<center>
+	<div id="heading">
+		<p>
+			<b>
+				<font size="+10">
+					
+				<h1>Welcome to RaspberryPi Codes</h1>
+				</font>
+			</b>
+		</p>
+	</div>
+
+	<p>
+		<h2>About RaspberryPi</h2>
+		Raspberry Pi is a series of small single-board computers developed in the United Kingdom by the Raspberry Pi Foundation in association with Broadcom.<br> The Raspberry Pi project originally leaned towards the promotion of teaching basic computer science in schools and in developing countries.
+	</p>
+
+	<p>
+		<h2>Codes Available..!!</h2>	
+	</p>
+
+	<table border="5">
+			<tr>
+				<th>Sr No.</th>
+				<th>Componets</th>
+			</tr>
+
+			<tr>
+				<td>1</td>
+				<td><a href="#b">Buzzers</a></td>
+			</tr>
+			
+			<tr>
+				<td>2</td>
+				<td><a href="#c">Camera</a></td>
+			</tr>
+			
+			<tr>
+				<td>3</td>
+				<td><a href="#km">Keypad Mapping</a></td>
+			</tr>
+			
+			<tr>
+				<td>4</td>
+				<td>LED</td>
+				<td>
+					<table>
+						<tr>
+							<td><a href="#l">LED</a></td>
+						</tr>
+						<tr>
+							<td><a href="#lpwm">LED with PWM</a></td>
+						</tr>
+						<tr>
+							<td>
+								<a href="#lpu">LED with Push UP Button</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+
+			<tr>
+				<td>5</td>
+				<td>Motors</td>
+				<td>
+					<table>
+						<tr>
+							<td><a href="#dc">DC</a></td>
+						</tr>
+						<tr>
+							<td><a href="#s">Servo</a></td>
+						</tr>
+						<tr>
+							<td><a href="#sf">Stepper (Full)</a> </td>
+						</tr>
+						<tr>
+							<td><a href="#sh">Stepper (Half)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>Sensors</td>
+				<td>
+					<table>
+						<tr>
+							<td><a href="#ir">Infrared</a></td>
+						</tr>
+						<tr>
+							<td><a href="#us">Ultra Sonic</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+	</table>
+
+	</center>
+<br><br><br>
+<hr size="5px" noshade>
+	
+	<div id="heading">
+		<p id="b">
+			<b>
+				<font size="+10" color="white">
+					<center><h1>Buzzer</h1></center>
+				</font>
+			</b>
+		</p>
+	</div>
+	<p>
+		<h2>About Buzzer</h2>
+		A buzzer or pager is associate degree audio signalling device, which can be mechanical, mechanical device, or electricity (piezo for short). 
+		Typical uses of buzzers and beepers embody alarm devices, timers, and confirmation of user input like a depression or keystroke.
+	</p>
+	<p>
+		<h3>Interfacing</h3>
+		<img src="https://ozeki.hu/attachments/2997/buzzer-raspberry-pi.png" alt="Buzzer" height="300" width="300">
+	</p>
+	<p>
+		<h2>Code:</h2>
+	</p>
+	
+	<p>
+		import RPi.GPIO as GPIO <br>
+		import time<br><br>
+
+		buzzer = 11 <br>
+		GPIO.setmode(GPIO.BOARD) <br>
+		GIPO.setup(buzzer,GPIO.OUT) <br><br>
+
+		try:<br>
+			&emsp;	while True:<br>
+			&emsp;&emsp;		GPIO.output(buzzer,True)<br>
+			&emsp;&emsp;		time.sleep(1)<br>
+			&emsp;&emsp;		GPIO.output(buzzer,False)<br>
+			&emsp;&emsp;		time.sleep(1)<br>
+		except:<br>
+			&emsp;	GPIO.cleanup()<br>
+	</p>
+
+	<hr size="5px" noshade>
+	<div id="heading">
+		<p id="c">
+			<b>
+				<font size="+10" color="white">
+					<center><h1>Camera</h1></center>
+				</font>
+			</b>
+		</p>
+	</div>
+	<p>
+		<h2>About Camera</h2>
+		A camera is associate instrument accustomed capture a picture. At their most simple, cameras area unit sealed boxes (the camera body) with atiny low hole (the aperture) that enables lightweight in to capture a picture on a sensitive surface (usually photographic paper or a digital sensor). Cameras have varied mechanisms to manage however the sunshine falls onto the sensitive surface. Lenses focus the sunshine getting into the camera, the dimensions of the aperture is widened or narrowed to let additional or less lightweight into the camera, and a shutter mechanism determines the number of your time the photo-sensitive surface is exposed to the sunshine.
+	</p>
+	<p>
+		<h3>Interfacing</h3>
+		<img src="https://projects-static.raspberrypi.org/projects/getting-started-with-picamera/e700e884354667bc3db3dddc19e20931a787c9a7/en/images/pi-camera-attached.jpg" alt="Camera" height="300" width="300">
+	</p>
+	<p>
+		<h2>Code</h2>
+		import picamera <br>
+		from time import sleep<br><br>
+
+		camera = picamera.PiCamera()<br>
+		camera.resolution = (1024, 768)<br>
+		camera.brightness = 60<br>
+
+		try:<br>
+			&emsp;while(True):<br>
+			&emsp;&emsp;	camera.start_preview()<br>
+			&emsp;&emsp;	camera.annotate_text = 'Hi Pi User'<br>
+			&emsp;&emsp;	camera.capture('image1.jpeg')<br>
+			&emsp;&emsp;	camera.stop_preview()<br>
+		except:<br>
+			&emsp;	GPIO.cleanup()<br>
+	
+	</p>
+
+	<hr size="5px" noshade>
+
+	<div id="heading">
+		<p id="km">
+			<b>
+				<font size="+10" color="white">
+					<center><h1>Keypad Mapping</h1></center>
+				</font>
+			</b>
+		</p>
+	</div><p>
+		<h2>About Keypad</h2>
+		A keypad is a set of buttons arranged in a block or pad which bear digits, symbols or alphabetical letters. Pads mostly containing numbers and used with computers are numeric keypads.
+	</p>
+
+	<p>
+		<h3>Interfacing</h3>
+		<img src="https://hackster.imgix.net/uploads/attachments/178906/HacksterLogo.png?auto=compress&w=900&h=675&fit=min&fm=jpg" alt="KM" height="500" width="500">
+	</p>
+<p>
+	<h2>Code</h2>
+import RPi.GPIO as GPIO<br>
+import time<br><br>
+
+row = [11,13,15,16]<br>
+col = [12,16,18,22]<br>
+keyboard = [<br>
+&emsp;&emsp;&emsp;["1","2","3","A"],<br>
+&emsp;&emsp;&emsp;["4","5","6","B"],<br>
+&emsp;&emsp;&emsp;["7","8","9","C"],<br>
+&emsp;&emsp;&emsp;["*","0","#","D"]<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;]<br>
+GPIO.setmode(GPIO.BOARD)<br>
+GPIO.setup(row,GPIO.OUT)<br>
+GPIO.setup(col,GPIO.IN,pull_up_down = GPIO.PUD.DOWN)<br><br>
+
+try:<br>
+&emsp;s="\0"<br>
+&emsp;while True:<br>
+&emsp;&emsp;for i in range(4):<br>
+&emsp;&emsp;&emsp;for j in range(4):<br>
+&emsp;&emsp;&emsp;GPIO.output(row[i],True)<br>
+&emsp;&emsp;&emsp;&emsp;if GPIO.input(col[i][j]):<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;s+=col[i][j]<br>
+&emsp;&emsp;&emsp;GPIO.output(row[i],False)<br>
+except:<br>
+&emsp;print(s)<br>
+&emsp;GPIO.cleanup()<br>
+</p>
+<hr size="5px" noshade>
+
+<div id="heading">
+		<p id="l">
+			<b>
+				<font size="+10" color="white">
+					<center><h1>LED</h1></center>
+				</font>
+			</b>
+		</p>
+	</div><p>
+		<h2>About LED</h2>
+		light emitting diode (a device that produces a light on electrical and electronic equipment)
+	</p>
+
+	<p>
+		<h3>Interfacing</h3>
+		<img src="https://gpiozero.readthedocs.io/en/stable/_images/led_bb.svg" alt="led" height="300" width="500">
+	</p>
+<p>
+	<h2>Code</h2>
+	import RPi.GPIO as GPIO<br>
+import time<br><br>
+
+led = 11<br>
+GPIO.setmode(GPIO.BOARD)<br>
+GIPO.setup(led,GPIO.OUT)<br><br>
+
+try:<br>
+&emsp;while True:<br>
+&emsp;&emsp;GPIO.output(led,True)<br>
+&emsp;&emsp;time.sleep(1)<br>
+&emsp;&emsp;GPIO.output(led,False)<br>
+&emsp;&emsp;time.sleep(1)<br>
+except:<br>
+&emsp;GPIO.cleanup()<br></p>
+
+<hr size="5px" noshade>
+<div id="heading">
+		<p id="lpwm">
+			<b>
+				<font size="+10" color="white">
+					<center><h1>LED - PWM</h1></center>
+				</font>
+			</b>
+		</p>
+	</div>
+	<p>
+		<h2>About Pulse Width Modulation</h2>
+		Pulse dimension modulation (PWM) could be a modulation technique that generates variable-width pulses to represent the amplitude of associate degree analog signaling. The output shift semiconductor device is on a lot of of the time for a high-amplitude signal and off a lot of of the time for a low-amplitude signal.
+	</p>
+
+	<p>
+		<h3>Interfacing</h3>
+		<img src="https://gpiozero.readthedocs.io/en/stable/_images/led_bb.svg" alt="lpwm" height="300" width="500">
+	</p>
+<p>
+	<h2>Code</h2>
+	import RPi.GPIO as GPIO<br>
+import time<br><br>
+
+led = 11<br>
+GPIO.setmode(GPIO.BOARD)<br>
+GPIO.setup(led,GPIO.OUT)<br>
+p = GPIO.PWM(led,100)<br>
+p.start(0)<br><br>
+
+try:<br>
+&emsp;while True:<br>
+&emsp;&emsp;for i in range(101):<br>
+&emsp;&emsp;&emsp;p.ChangeDutyCycle(i)<br>
+&emsp;&emsp;for i in range(100,-1,-1):<br>
+&emsp;&emsp;&emsp;p.ChangeDutyCycle(i)<br>
+except:<br>
+&emsp;GPIO.cleanup()<br></p>
+	<hr size="5px" noshade>
+
+	<div id="heading">
+		<p id="lpu">
+			<b>
+				<font size="+10" color="white">
+					<center><h1>LED - Push Up Button</h1></center>
+				</font>
+			</b>
+		</p>
+	</div>
+	<p>
+		<h2>About Push Up Button</h2>
+		A push-button (also spelled pushbutton) or simply button is a simple switch mechanism to control some aspect of a machine or a process. Buttons are typically made out of hard material, usually plastic or metal.
+	</p>
+
+	<p>
+		<h3>Interfacing</h3>
+		<img src="https://hackster.imgix.net/uploads/attachments/303948/untitled-sketch_bb_aSAL3Ak7PO.jpg" alt="lpu" height="300" width="500">
+	</p>
+<p>
+	<h2>Code</h2>
+	import RPi.GPIO as GPIO<br>
+import time<br><br>
+
+button = 11<br>
+led = 13<br>
+GPIO.setmode(GPIO.BOARD)<br>
+GPIO.setup(led,GPIO.OUT)<br>
+GPIO.setup(button,GPIO.IN,push_up_down=GPIO.PUD.UP)<br><br>
+
+try:<br>
+&emsp;while True:<br>
+&emsp;&emsp;if GPIO.input(button)==False:<br>
+&emsp;&emsp;&emsp;GPIO.output(led,True)<br>
+&emsp;&emsp;else:<br>
+&emsp;&emsp;&emsp;GPIO.output(led,False)<br>
+except:<br>
+&emsp;GPIO.cleanup() <br></p>
+
+	<hr size="5px" noshade>
+
+	<div id="heading">
+		<p id="dc">
+			<b>
+				<font size="+10" color="white">
+					<center><h1>DC Motor</h1></center>
+				</font>
+			</b>
+		</p>
+	</div>
+
+	<p>
+		<h2>About DC Motor</h2>
+		An electric motor is an electrical machine that converts electrical energy into mechanical energy. Most electric motors operate through the interaction between the motor's magnetic field and electric current in a wire winding to generate force in the form of torque applied on the motor's shaft.	
+	</p>
+
+	<p>
+		<h3>interfacing</h3>
+		<img src="https://iotdesignpro.com/sites/default/files/inline-images/Stepper-Motor-Control-using-Raspberry-Pi-Circuit-Diagram.png" alt="DC Motor" height="300" width="500">	
+	</p>
+
+	<p>
+		<h2>Code</h2>
+	import RPi.GPIO as GPIO <br>
+	import time<br><br>
+
+	dc = 11<br>
+	GPIO.setmode(GPIO.BOARD)<br>
+	GPIO.setup(dc,GPIO.OUT)<br>
+	p = GPIO.PWM(dc,100)<br>
+	p.start(0)<br><br>
+
+	try:<br>
+		&emsp;while True:<br>
+		&emsp;&emsp;for i in range(101):<br>
+		&emsp;&emsp;&emsp;p.ChangeDutyCycle(i)<br><br>
+
+		&emsp;&emsp;for i in range(100,-1,-1):<br>
+		&emsp;&emsp;&emsp;p.ChangeDutyCycle(i)<br>
+
+	except:<br>
+		&emsp;GPIO.cleanup()<br>
+	</p>
+	<hr size="5px" noshade>
+
+	<div id="heading">
+		<p id="s">
+			<b>
+				<font size="+10" color="white">
+					<center><h1>Servo Motor</h1></center>
+				</font>
+			</b>
+		</p>
+	</div>
+	<p>
+		<h2>About Servo</h2>
+		The servo motor may be a closed-loop mechanism that comes with point feedback so as to manage the movement or linear speed and position. The motor is controlled with an electrical signal, either analog or digital, that determines the quantity of movement that represents the ultimate command position for the shaft.
+	</p>
+
+	<p>
+		<h3>Interfcaing</h3>
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNUmod78g-jxWC-xRY0vss_V6vVHKG_2PyZQ&usqp=CAU" alt="Servo" height="300" width="500">
+	</p>
+<p>
+	<h2>Code</h2>
+	import RPi.GPIO as GPIO<br>
+import time<br><br>
+
+servo = 11<br>
+counter = [5,5.5,6,6.5,7,7.5,8,8.5,9,9.5,10]<br>
+GPIO.setmode(GPIO.BOARD)<br>
+GPIO.setup(servo,GPIO.OUT)<br>
+p = GPIO.PWM(servo,50)<br>
+p.start(0)<br><br>
+
+try:<br>
+&emsp;while True:<br>
+&emsp;&emsp;for i in range(10):<br>
+&emsp;&emsp;&emsp;p.ChangeDutyCycle(counter[i])<br>
+&emsp;&emsp;for i in range(9,-1,-1):<br>
+&emsp;&emsp;&emsp;p.ChangeDutyCycle(counter[i])<br>
+except:<br>
+&emsp;GPIO.cleanup()<br></p>
+	<hr size="5px" noshade>
+
+<div id="heading">
+		<p id="sf">
+			<b>
+				<font size="+10" color="white">
+					<center><h1>Stepper Motor (Full)</h1></center>
+				</font>
+			</b>
+		</p>
+	</div>
+	<p>
+		<h2>About Stepper Motor</h2>
+		A stepper motor, also known as step motor or stepping motor, is a brushless DC electric motor that divides a full rotation into a number of equal steps. The motor's position can then be commanded to move and hold at one of these steps without any position sensor for feedback (an open-loop controller), as long as the motor is carefully sized to the application in respect to torque and speed.
+	</p>
+
+	<p>
+		<h3>Interfacing</h3>
+		<img src="https://images.squarespace-cdn.com/content/v1/59b037304c0dbfb092fbe894/1611529718061-Y0N4ZQCQOC3RNTC3CSYT/ke17ZwdGBToddI8pDm48kFyvFmcQvso5gaTq4MAPakZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UW9S91J-0joP1lm5ZFcoXvyRanXZ3NUeDHi1kHXNL0MTH3bqxw7fF48mhrq5Ulr0Hg/nema17_rpi_drv8825_drawing.png" alt="servoMotorFull" height="300" width="500">
+	</p>
+<p>
+	<h2>Code</h2>
+	import RPi.GPIO as GPIO<br>
+import time<br><br>
+
+motor_channel=[11,13,15,19]<br>
+rotate =[&emsp;[1,0,0,1],<br>
+&emsp;&emsp;&emsp;[1,1,0,0],<br>
+&emsp;&emsp;&emsp;[0,1,1,0],<br>
+&emsp;&emsp;&emsp;[0,0,1,1]&emsp;]<br>
+GPIO.setmode(GPIO.BOARD)<br>
+GPIO.setup(motor_channel,GPIO.OUT)<br><br>
+
+try:<br>
+&emsp;while True:<br>
+&emsp;&emsp;for i in range(4):<br>
+&emsp;&emsp;&emsp;for j in range(4):<br>
+&emsp;&emsp;&emsp;&emsp;GPIO.output(motor_channel[j],rotate[i][j])<br>
+&emsp;&emsp;&emsp;&emsp;time.sleep(0.3)<br>
+except:<br>
+&emsp;GPIO.cleanup()<br>
+</p>
+	<hr size="5px" noshade>
+
+<div id="heading">
+		<p id="sh">
+			<b>
+				<font size="+10" color="white">
+					<center><h1>Stepper Motor (Half)</h1></center>
+				</font>
+			</b>
+		</p>
+	</div>
+	<p>
+		<h2>About Stepper Motor</h2>
+		A stepper motor, also known as step motor or stepping motor, is a brushless DC electric motor that divides a full rotation into a number of equal steps. The motor's position can then be commanded to move and hold at one of these steps without any position sensor for feedback (an open-loop controller), as long as the motor is carefully sized to the application in respect to torque and speed.
+	</p>
+
+	<p>
+		<h3>Interfacing</h3>
+		<img src="https://images.squarespace-cdn.com/content/v1/59b037304c0dbfb092fbe894/1611529718061-Y0N4ZQCQOC3RNTC3CSYT/ke17ZwdGBToddI8pDm48kFyvFmcQvso5gaTq4MAPakZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UW9S91J-0joP1lm5ZFcoXvyRanXZ3NUeDHi1kHXNL0MTH3bqxw7fF48mhrq5Ulr0Hg/nema17_rpi_drv8825_drawing.png" alt="servoMotorFull" height="300" width="500">
+	</p>
+<p>
+	<h2>code</h2>
+	import RPi.GPIO as GPIO<br>
+import time<br><br>
+
+motor_channel=[11,13,15,19]<br>
+rotate =[<br>
+&emsp;&emsp;&emsp;[1,0,0,1],<br>
+&emsp;&emsp;&emsp;[1,0,0,0],<br>
+&emsp;&emsp;&emsp;[1,1,0,0],<br>
+&emsp;&emsp;&emsp;[0,1,0,0],<br>
+&emsp;&emsp;&emsp;[0,1,1,0],<br>
+&emsp;&emsp;&emsp;[0,0,1,0],<br>
+&emsp;&emsp;&emsp;[0,0,1,1],<br>
+&emsp;&emsp;&emsp;[0,0,0,1],<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;]<br>
+GPIO.setmode(GPIO.BOARD)<br>
+GPIO.setup(motor_channel,GPIO.OUT)<br><br>
+
+try:<br>
+&emsp;while True:<br>
+&emsp;&emsp;for i in range(8):<br>
+&emsp;&emsp;&emsp;for j in range(4):<br>
+&emsp;&emsp;&emsp;&emsp;GPIO.output(motor_channel[j],rotate[i][j])<br>
+&emsp;&emsp;&emsp;&emsp;time.sleep(0.3)<br>
+except:<br>
+&emsp;GPIO.cleanup()<br>
+</p>
+<hr size="5px" noshade>
+<div id="heading">
+		<p id="ir">
+			<b>
+				<font size="+10" color="white">
+					<center><h1>Infrared Sensor</h1></center>
+				</font>
+			</b>
+		</p>
+	</div>
+
+	<p>
+		<h2>About Infrared Sensor</h2>
+		An infrared detector is associate degree device, that emits so as to sense some aspects of the environment. associate degree IR detector will live the warmth of associate degree object still as detects the motion. These forms of sensors live solely infrared light, instead of emitting it that's known as a passive IR detector.
+	</p>
+
+	<p>
+		<h3>Interfacing</h3>
+		<img src="https://clover.coex.tech/assets/IR_reciver_connection.png" alt="Ir sensor" height="300" width="300">
+	</p>
+<p>
+	<h2>Code</h2>
+import RPi.GPIO as GPIO <br>
+import time<br><br>
+
+sensor = 11<br>
+GPIO.setmode(GPIO.BOARD)<br>
+GPIO.setup(sensor,GPIO.IN)<br><br>
+
+try:<br>
+&emsp;while True:<br>
+&emsp;&emsp;if GPIO.input(sensor):<br>
+&emsp;&emsp;&emsp;print("DETECTED!")<br>
+&emsp;&emsp;else<br>
+&emsp;&emsp;&emsp;print("NTG IS THERE!")<br>
+except:<br>
+&emsp;GPIO.cleanup()<br>
+</p>
+<hr size="5px" noshade>
+<div id="heading">
+		<p id="us">
+			<b>
+				<font size="+10" color="white">
+					<center><h1>Ultra Sonic Sensor</h1></center>
+				</font>
+			</b>
+		</p>
+	</div>
+	<p>
+		<h2>About Ultra Sonic Sensor</h2>
+		An ultrasonic detector is an electronic device that measures the distance of a target object by emitting ultrasonic sound swells, and converts the reflected sound into an electrical signal. Ultrasonic swells travel faster than the speed of audible sound (i.e. the sound that humans can hear).
+	</p>
+
+	<p>
+		<h3>Interfacing</h3>
+		<img src="https://pimylifeup.com/wp-content/uploads/2018/03/Distance-Sensor-Fritz.png" alt="ultraSonicSensor" height="300" width="500">
+	</p>
+<p>
+	<h2>Code</h2>
+	import RPi.GPIO as GPIO<br>
+import time<br><br>
+
+trig = 11<br>
+echo = 13<br>
+GPIO.setmode(GPIO.BOARD)<br>
+GPIO.setup(trig,GPIO.OUT)<br>
+GPIO.setup(echo,GPIO.IN)<br><br>
+
+try:<br>
+&emsp;while True:<br>
+&emsp;&emsp;GPIO.output(trig,True)<br>
+&emsp;&emsp;time.sleep(0.000001)<br>
+&emsp;&emsp;GPIO.output(trig,False)<br><br>
+&emsp;&emsp;while GPIO.input(echo)==0:<br>
+&emsp;&emsp;&emsp;start = time.time()<br><br>
+&emsp;&emsp;if GPIO.input(echo)==1:<br>
+&emsp;&emsp;&emsp;end = time.time()<br><br>
+&emsp;&emsp;dist = (end-start)*170 #in_meter<br>
+&emsp;&emsp;print(distance)<br>
+except:<br>
+&emsp;GPIO.cleanup()<br>
+
+</p>
+<br><br><br>
+<hr size="5px" noshade>
+	<div id="about">
+		<p>
+			<h1>About ME:🤭</h1>
+			Hello ;) Sameer Mishra here..!!<br>
+			I am a CSE Engineering student. Just made this site for fun. Hope it turns out to be useful to you..!! The codes are not tested over RPi kits, so if there occurs any kind of error please inform me about that over my email i.e. sameermishra035@gmail.com ! <br>
+
+			Have A Good Day..!!<br><br><br>
+			<center>
+				<img src="https://www.facebook.com/images/fb_icon_325x325.png" height=50 width=50 usemap="#fb">
+				&emsp;&emsp;&emsp;
+				<img src="https://play-lh.googleusercontent.com/h9jWMwqb-h9hjP4THqrJ50eIwPekjv7QPmTpA85gFQ10PjV02CoGAcYLLptqd19Sa1iJ" height=50 width=50 usemap="#insta">
+				&emsp;&emsp;&emsp;
+				<img src="https://www.fpsa.org/wp-content/uploads/linkedin-logo-copy.png" height=50 width=50 usemap="#linkedin">
+			</center>
+		</p>
+	</div>
+	<map name="fb">
+		<area shape="rect" coords="0,0,600,500" href="https://m.facebook.com/profile.php?id=100010865796559&ref=content_filter">
+	</map>
+	<map name="insta">
+		<area shape="rect" coords="0,0,600,500" href="https://instagram.com/heyitzmishra?utm_medium=copy_link">
+	</map>
+	<map name="linkedin">
+		<area shape="rect" coords="0,0,600,500" href="https://www.linkedin.com/in/sameer-shekhar-mishra">
+	</map>
+
+</body>
+</font>
+</html>
